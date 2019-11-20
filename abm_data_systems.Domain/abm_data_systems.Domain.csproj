@@ -14,6 +14,7 @@
     <Folder Include="Entities\Common\" />
     <Folder Include="Interfaces\Repositories\" />
     <Folder Include="Interfaces\Services\" />
+    <Folder Include="Entities\Question3\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DotNetCore.Objects" Version="9.25.0" />

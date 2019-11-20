@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using abm_data_systems.Application.ViewModels;
+using abm_data_systems.Application.Interfaces;
+using abm_data_systems.Application.ViewModels.Question3;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace abm_data_systems.API.Controllers
 {
+    [Produces("application/xml")]
     [ApiController]
     [Route("[controller]")]
     public class CodeChallengeController : Controller
@@ -21,10 +23,14 @@ namespace abm_data_systems.API.Controllers
         public async Task<IActionResult> Question1()
         {
 
-            return StatusCode(200,
-                    new UserViewModel()
-                    { }
-                    );
+            try
+            {
+                return new OkObjectResult(new{ });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // [Authorize("Bearer")]
@@ -34,23 +40,34 @@ namespace abm_data_systems.API.Controllers
         public async Task<IActionResult> Question2()
         {
 
-            return StatusCode(200,
-                    new UserViewModel()
-                    { }
-                    );
+            try
+            {
+                return new OkObjectResult(new { });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // [Authorize("Bearer")]
         [AllowAnonymous]
         [HttpGet]
         [Route("Question3")]
-        public async Task<IActionResult> Question3()
+        public async Task<IActionResult> Question3(
+            [FromServices]IQuestion3AppService _repository,
+            [FromBody] DeclarationHeaderViewModal dado
+        )
         {
 
-            return StatusCode(200,
-                    new UserViewModel()
-                    { }
-                    );
+            try
+            {
+                return new OkObjectResult(await _repository.GetStatus(dado));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

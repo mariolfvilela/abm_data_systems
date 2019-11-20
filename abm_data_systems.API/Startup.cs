@@ -41,7 +41,9 @@ namespace abm_data_systems.API
           options.EnableEndpointRouting = false)
           .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddControllers();
+            //Add XML format support
+            services.AddControllers()
+                .AddXmlSerializerFormatters();
 
             services.AddDbContextPool<Context_ABM_Data_Systems>(builder =>
             {
