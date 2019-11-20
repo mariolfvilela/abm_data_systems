@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Entities\Common\" />
+    <Folder Include="Interfaces\Repositories\" />
+    <Folder Include="Interfaces\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DotNetCore.Objects" Version="9.25.0" />
+  </ItemGroup>
+</Project>
