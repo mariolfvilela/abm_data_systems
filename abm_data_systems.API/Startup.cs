@@ -48,7 +48,7 @@ namespace abm_data_systems.API
                 if (_env.IsDevelopment())
                     builder.EnableSensitiveDataLogging(true);
 
-                var connStr = this.Configuration.GetConnectionString("ABM_Data_Systems");
+                var connStr = this.Configuration.GetConnectionString("ABM Data Systems");
                 builder.UseMySql(connStr);
             });
 
@@ -75,7 +75,7 @@ namespace abm_data_systems.API
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ABM_Data_Systems", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ABM Data Systems", Version = "v1" });
             });
 
             //Autenticação e Autorização com Bearer e JWT
