@@ -16,9 +16,10 @@ namespace abm_data_systems.Infra.Data.Context
         public Context_ABM_Data_Systems(DbContextOptions<Context_ABM_Data_Systems> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
+
             //if (Database.GetPendingMigrations().Count() > 0)
-            //Database.Migrate();
+                //Database.Migrate();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -101,8 +102,7 @@ namespace abm_data_systems.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.ApplyConfiguration(new UserMap());
+            //modelBuilder.ApplyConfiguration(new UserMap());
         }
 
     }

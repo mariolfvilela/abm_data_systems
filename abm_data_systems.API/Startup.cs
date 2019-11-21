@@ -43,6 +43,8 @@ namespace abm_data_systems.API
 
             //Add XML format support
             services.AddControllers()
+                //.AddXmlDataContractSerializerFormatters()
+                //.AddNewtonsoftJson().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddXmlSerializerFormatters();
 
             services.AddDbContextPool<Context_ABM_Data_Systems>(builder =>

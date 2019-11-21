@@ -17,7 +17,7 @@ namespace abm_data_systems.CrossCutting.IoC
             //Aplicação
             svcCollection.AddTransient(typeof(IAppServicoBase<,>), typeof(AppServiceBase<,>));
             svcCollection.AddTransient<IUserAppService, UserAppService>();
-            svcCollection.AddTransient<IQuestion3AppService, Question3AppService>();
+            svcCollection.AddTransient<ICodeChallengeAppService, CodeChallengeAppService>();
 
 
             //Domínio

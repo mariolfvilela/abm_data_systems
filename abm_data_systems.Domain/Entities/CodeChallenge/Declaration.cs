@@ -6,7 +6,7 @@ namespace abm_data_systems.Domain.Entities.CodeChallenge
 
 
 {
-    public class Declaration : EntityBase
+    public class Declaration
     {
         public InputDocument DeclarationHeader { get; set; }
         public string Command { get; set; }

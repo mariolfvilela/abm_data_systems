@@ -20,7 +20,9 @@ namespace abm_data_systems.API.Controllers
         [AllowAnonymous]
         [HttpGet]
         [Route("Question1")]
-        public async Task<IActionResult> Question1()
+        public async Task<IActionResult> Question1(
+            [FromServices]ICodeChallengeAppService _repository
+        )
         {
 
             try
@@ -37,12 +39,15 @@ namespace abm_data_systems.API.Controllers
         [AllowAnonymous]
         [HttpPut]
         [Route("Question2")]
-        public async Task<IActionResult> Question2()
+        public async Task<IActionResult> Question2(
+            [FromServices]ICodeChallengeAppService _repository,
+            [FromBody] InputDocumentViewModal dado
+        )
         {
 
             try
             {
-                return new OkObjectResult(new { });
+                return new OkObjectResult(new { dado });
             }
             catch (Exception ex)
             {
@@ -55,11 +60,10 @@ namespace abm_data_systems.API.Controllers
         [HttpPut]
         [Route("Question3")]
         public async Task<IActionResult> Question3(
-            [FromServices]IQuestion3AppService _repository,
+            [FromServices]ICodeChallengeAppService _repository,
             [FromBody] InputDocumentViewModal dado
         )
         {
-
             try
             {
                 return new OkObjectResult(await _repository.Question3(dado));

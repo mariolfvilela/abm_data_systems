@@ -13,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace abm_data_systems.API.Controllers
 {
-    [Route("api/company")]
+    [Route("api/abm_data_systems")]
     public class HomeController : Controller
     {
         [HttpPost]

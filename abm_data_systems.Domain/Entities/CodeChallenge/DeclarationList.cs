@@ -5,7 +5,7 @@ namespace abm_data_systems.Domain.Entities.CodeChallenge
 
 
 {
-    public class DeclarationList : EntityBase
+    public class DeclarationList
     {
         public Declaration Declaration { get; set; }
     }

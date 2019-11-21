@@ -6,7 +6,7 @@ using DotNetCore.Objects;
 
 namespace abm_data_systems.Application.Interfaces
 {
-    public interface IQuestion3AppService : IAppServicoBase<InputDocument, InputDocumentViewModal>
+    public interface ICodeChallengeAppService : IAppServicoBase<InputDocument, InputDocumentViewModal>
     {
         Task<IDataResult<int>>Question3(InputDocumentViewModal inputDocumentViewModal);
     }

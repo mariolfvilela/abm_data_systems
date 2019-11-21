@@ -3,7 +3,7 @@ using abm_data_systems.Domain.Entities.Common;
 
 namespace abm_data_systems.Domain.Entities.CodeChallenge
 {
-    public class DeclarationHeader : EntityBase
+    public class DeclarationHeader
     {
         public string Jurisdiction { get; set; }
         public string CWProcedure { get; set; }
