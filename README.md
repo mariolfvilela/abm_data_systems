@@ -1,11 +1,9 @@
 # Challenge proposed by ABM Data Systems, which contains 3 questions:
-
-:vertical_traffic_light: the project is dot net core 3.0 :vertical_traffic_light:
-
+:vertical_traffic_light: The project is dot net core 3.0 :vertical_traffic_light:
 ### :thumbsup: Developer Technical Questions.
 
-- [] Taking the following EDIFACT message text, write some code to parse out the all the LOC segments and populate an array with the 2nd and 3rd element of each segment.
-  Note: the ‘+’ is an element delimiter
+1. [ ] Taking the following EDIFACT message text, write some code to parse out the all the LOC segments and populate an array with the 2nd and 3rd element of each segment.
+Note: the ‘+’ is an element delimiter
 
 ```
 UNA:+.? '
@@ -22,7 +20,7 @@ DTM+268:20090626:102'
 DTM+182:20090527:102'
 ```
 
-1.[] Taking the following XML document, write code to extract the RefText values for the following RefCodes: ‘MWB’, ‘TRV’ and ‘CAR’
+2. [ ] Taking the following XML document, write code to extract the RefText values for the following RefCodes: ‘MWB’, ‘TRV’ and ‘CAR’
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -71,7 +69,7 @@ DTM+182:20090527:102'
 </InputDocument>
 ```
 
-2. [] Write a webservice that accepts the following XML document as the payload:
+3. [x] Write a webservice that accepts the following XML document as the payload:
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -91,43 +89,37 @@ DTM+182:20090527:102'
 </InputDocument>
 ```
 
-3. [x] The webservice should respond with a status code which is based on parsing the contents of the XML payload.
-
+The webservice should respond with a status code which is based on parsing the contents of the XML payload.
 - If the XML document is given here is passed then return a status of ‘0’ – which means the document was structured correctly.
 - If the Declararation’s Command <> ‘DEFAULT’ then return ‘-1’ – which means invalid command specified.
 - If the SiteID <> ‘DUB’ then return ‘-2’ – invalid Site specified.
 
 **Software modeling approach was developed the challenge "DDD Architecture", Domain Driven Design (DDD).** Reference [Eric Ferreira](https://medium.com/@ericandrade_24404/parte-01-criando-arquitetura-em-camadas-com-ddd-injeção-de-dep-ef-60b851c88461).
-
-> DDD is a software modeling approach that follows a set of practices to facilitate the implementation of complex business rules / processes that we treat as a domain. - Eduardo Pires
+>DDD is a software modeling approach that follows a set of practices to facilitate the implementation of complex business rules / processes that we treat as a domain. - Eduardo Pires
 
 - 02 - Services: receives “Application” reference.
 - 03 - Application: receives "Domain" reference.
 - 04 - Domain: Although it is the layer that most supports the other layers, it is the only one that receives no reference from anyone, so it depends on nothing! However, as the image shows, it communicates “indirectly” with the Data (Infrastructure) layer, and this is only possible thanks to interfaces.
 - 05 - Infrastructure: Last but not least, we have this layer that (as previously mentioned) has “sublayers” Data and CrossCutting, where they receive domain reference.
-  Data: is intended to persist data or any other external communication.
-  CrossCurring (Ioc): This is where all the interfaces and classes in the project are registered, so that it is responsible for instantiating the dependency tree of the whole architecture.
+Data: is intended to persist data or any other external communication.
+CrossCurring (Ioc): This is where all the interfaces and classes in the project are registered, so that it is responsible for instantiating the dependency tree of the whole architecture.
 
-_A note on architecture:
-As we can see, all layers are sequentially numbered, and this is very important, as this is exactly how the architecture flow works, from the graphical interface to the persistence of information in the database._
+*A note on architecture:
+As we can see, all layers are sequentially numbered, and this is very important, as this is exactly how the architecture flow works, from the graphical interface to the persistence of information in the database.*
 
 **Authentication and Authorization with Bearer and JWT** Reference [Balta](https://balta.io/blog/aspnetcore-3-autenticacao-autorizacao-bearer-jwt).
-
-> JWT is an industry standard (RFC-7519) that defines how to transmit and store JSON objects compactly and securely between different applications. The data contained therein can be validated at any time because the token is digitally signed. -Wellington Nascimento
+>JWT is an industry standard (RFC-7519) that defines how to transmit and store JSON objects compactly and securely between different applications. The data contained therein can be validated at any time because the token is digitally signed. -Wellington Nascimento
 
 **Swagger** Reference [Rebai Hamida](https://medium.com/@didourebai/add-swagger-to-asp-net-core-3-0-web-api-874cb265854c).
+>Swagger is a simple yet powerful representation of your RESTful API. With the largest ecosystem of API tooling on the planet, thousands of developers are supporting Swagger in almost every modern programming language and deployment environment. With a Swagger-enabled API, you get interactive documentation, client SDK generation and discoverability. -Rebai Hamida
 
-> Swagger is a simple yet powerful representation of your RESTful API. With the largest ecosystem of API tooling on the planet, thousands of developers are supporting Swagger in almost every modern programming language and deployment environment. With a Swagger-enabled API, you get interactive documentation, client SDK generation and discoverability. -Rebai Hamida
-
-_For testing authentications, the valid values for user are {Username = "batman", Password = "batman"} or {Username = "robin", Password = "robin"}_
+*For testing authentications, the valid values for user are {Username = "batman", Password = "batman"} or {Username = "robin", Password = "robin"}*
 
 **Other features add to the project are:**
-
 - dependency injection
 - EntityFramework
-- MySql database (_unfortunately could not create a cache, but my skills are recorded_)
+- MySql database (*unfortunately could not create a cache, but my skills are recorded*)
 - Validation with data annotations
-
----
-
+*****
 ###### Note: All testing can be done by running abm_data_systems.API as the main project.
+
