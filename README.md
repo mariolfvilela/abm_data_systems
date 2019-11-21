@@ -25,77 +25,77 @@ DTM+182:20090527:102'
 1.[] Taking the following XML document, write code to extract the RefText values for the following RefCodes: ‘MWB’, ‘TRV’ and ‘CAR’
 
 ```XML
+<?xml version="1.0" encoding="UTF-8"?>
 <InputDocument>
-  <DeclarationList>
-    <Declaration Command="DEFAULT" Version="5.13">
-      <DeclarationHeader>
-        <Jurisdiction>IE</Jurisdiction>
-        <CWProcedure>IMPORT</CWProcedure>
-        <DeclarationDestination>CUSTOMSWAREIE</DeclarationDestination>
-        <DocumentRef>71Q0019681</DocumentRef>
-        <SiteID>DUB</SiteID>
-        <AccountCode>G0779837</AccountCode>
-        <Reference RefCode="MWB">
-          <RefText>586133622</RefText>
-        </Reference>
-        <Reference RefCode="KEY">
-          <RefText>DUB16049</RefText>
-        </Reference>
-        <Reference RefCode="CAR">
-          <RefText>71Q0019681</RefText>
-        </Reference>
-        <Reference RefCode="COM">
-          <RefText>71Q0019681</RefText>
-        </Reference>
-        <Reference RefCode="SRC">
-          <RefText>ECUS</RefText>
-        </Reference>
-        <Reference RefCode="TRV">
-          <RefText>1</RefText>
-        </Reference>
-        <Reference RefCode="CAS">
-          <RefText>586133622</RefText>
-        </Reference>
-        <Reference RefCode="HWB">
-          <RefText>586133622</RefText>
-        </Reference>
-        <Reference RefCode="UCR">
-          <RefText>586133622</RefText>
-        </Reference>
-        <Country CodeType="NUM" CountryType="Destination">IE</Country>
-        <Country CodeType="NUM" CountryType="Dispatch">CN</Country>
-          </DeclarationHeader>
-</Declaration>
-</DeclarationList>
+   <DeclarationList>
+      <Declaration Command="DEFAULT" Version="5.13">
+         <DeclarationHeader>
+            <Jurisdiction>IE</Jurisdiction>
+            <CWProcedure>IMPORT</CWProcedure>
+            <DeclarationDestination>CUSTOMSWAREIE</DeclarationDestination>
+            <DocumentRef>71Q0019681</DocumentRef>
+            <SiteID>DUB</SiteID>
+            <AccountCode>G0779837</AccountCode>
+            <Reference RefCode="MWB">
+               <RefText>586133622</RefText>
+            </Reference>
+            <Reference RefCode="KEY">
+               <RefText>DUB16049</RefText>
+            </Reference>
+            <Reference RefCode="CAR">
+               <RefText>71Q0019681</RefText>
+            </Reference>
+            <Reference RefCode="COM">
+               <RefText>71Q0019681</RefText>
+            </Reference>
+            <Reference RefCode="SRC">
+               <RefText>ECUS</RefText>
+            </Reference>
+            <Reference RefCode="TRV">
+               <RefText>1</RefText>
+            </Reference>
+            <Reference RefCode="CAS">
+               <RefText>586133622</RefText>
+            </Reference>
+            <Reference RefCode="HWB">
+               <RefText>586133622</RefText>
+            </Reference>
+            <Reference RefCode="UCR">
+               <RefText>586133622</RefText>
+            </Reference>
+            <Country CodeType="NUM" CountryType="Destination">IE</Country>
+            <Country CodeType="NUM" CountryType="Dispatch">CN</Country>
+         </DeclarationHeader>
+      </Declaration>
+   </DeclarationList>
 </InputDocument>
 ```
 
 2. [] Write a webservice that accepts the following XML document as the payload:
 
 ```XML
+<?xml version="1.0" encoding="UTF-8"?>
 <InputDocument>
-	<DeclarationList>
-		<Declaration Command="DEFAULT" Version="5.13">
-			<DeclarationHeader>
-				<Jurisdiction>IE</Jurisdiction>
-				<CWProcedure>IMPORT</CWProcedure>
-							<DeclarationDestination>CUSTOMSWAREIE</DeclarationDestination>
-				<DocumentRef>71Q0019681</DocumentRef>
-				<SiteID>DUB</SiteID>
-				<AccountCode>G0779837</AccountCode>
-			</DeclarationHeader>
-		</Declaration>
-	</DeclarationList>
+   <DeclarationList>
+      <Declaration Command="DEFAULT" Version="5.13">
+         <DeclarationHeader>
+            <Jurisdiction>IE</Jurisdiction>
+            <CWProcedure>IMPORT</CWProcedure>
+            <DeclarationDestination>CUSTOMSWAREIE</DeclarationDestination>
+            <DocumentRef>71Q0019681</DocumentRef>
+            <SiteID>DUB</SiteID>
+            <AccountCode>G0779837</AccountCode>
+         </DeclarationHeader>
+      </Declaration>
+   </DeclarationList>
 </InputDocument>
 ```
 
-3. [x] The webservice should respond with a status code which is based on parsing the contents of the XML payload
+3. [x] The webservice should respond with a status code which is based on parsing the contents of the XML payload.
 
--- If the XML document is given here is passed then return a status of ‘0’ – which means the document was structured correctly.
-
--If the Declararation’s Command <> ‘DEFAULT’ then return ‘-1’ – which means invalid command specified.
-
--If the SiteID <> ‘DUB’ then return ‘-2’ – invalid Site specified.
+- If the XML document is given here is passed then return a status of ‘0’ – which means the document was structured correctly.
+- If the Declararation’s Command <> ‘DEFAULT’ then return ‘-1’ – which means invalid command specified.
+- If the SiteID <> ‘DUB’ then return ‘-2’ – invalid Site specified.
 
 **Software modeling approach was developed the challenge "DDD Architecture", Domain Driven Design (DDD).** Reference [Eric Ferreira](https://medium.com/@ericandrade_24404/parte-01-criando-arquitetura-em-camadas-com-ddd-injeção-de-dep-ef-60b851c88461).
 
