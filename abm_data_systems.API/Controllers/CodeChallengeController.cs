@@ -18,16 +18,16 @@ namespace abm_data_systems.API.Controllers
     {
         // [Authorize("Bearer")]
         [AllowAnonymous]
-        [HttpGet]
+        [HttpPut]
         [Route("Question1")]
         public async Task<IActionResult> Question1(
-            [FromServices]ICodeChallengeAppService _repository
+            [FromServices]ICodeChallengeAppService _repository,
+            [FromBody] dynamic dado
         )
         {
-
             try
             {
-                return new OkObjectResult(new{ });
+                return new OkObjectResult(_repository.Question1(dado));
             }
             catch (Exception ex)
             {
@@ -37,6 +37,8 @@ namespace abm_data_systems.API.Controllers
 
         // [Authorize("Bearer")]
         [AllowAnonymous]
+        [Consumes("application/xml")]
+        [Produces("application/xml")]
         [HttpPut]
         [Route("Question2")]
         public async Task<IActionResult> Question2(
@@ -44,10 +46,9 @@ namespace abm_data_systems.API.Controllers
             [FromBody] InputDocumentViewModal dado
         )
         {
-
             try
             {
-                return new OkObjectResult(new { dado });
+                return new OkObjectResult(await _repository.Question2(dado));
             }
             catch (Exception ex)
             {
@@ -57,6 +58,8 @@ namespace abm_data_systems.API.Controllers
 
         // [Authorize("Bearer")]
         [AllowAnonymous]
+        [Consumes("application/xml")]
+        [Produces("application/xml")]
         [HttpPut]
         [Route("Question3")]
         public async Task<IActionResult> Question3(

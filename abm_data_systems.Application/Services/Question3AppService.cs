@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using abm_data_systems.Application.Interfaces;
 using abm_data_systems.Application.Validation;
@@ -18,6 +19,16 @@ namespace abm_data_systems.Application.Services
             : base(iMapper, service)
         {
             _service = service;
+        }
+
+        public Task<IDataResult<dynamic>> Question1(InputDocumentViewModal inputDocument)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IDataResult<List<dynamic>>> Question2(InputDocumentViewModal inputDocument)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IDataResult<int>> Question3(InputDocumentViewModal inputDocumentViewModal)
