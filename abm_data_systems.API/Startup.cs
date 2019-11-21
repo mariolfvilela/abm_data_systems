@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,17 +39,22 @@ namespace abm_data_systems.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options =>
-          options.EnableEndpointRouting = false)
+          {
+              //options.OutputFormatters.Add(new XmlSerializerOutputFormatter());
+              options.EnableEndpointRouting = false;
+          })
           .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddControllers();
+            //Add XML format support
+            services.AddControllers()
+                .AddXmlSerializerFormatters();
 
             services.AddDbContextPool<Context_ABM_Data_Systems>(builder =>
             {
                 if (_env.IsDevelopment())
                     builder.EnableSensitiveDataLogging(true);
 
-                var connStr = this.Configuration.GetConnectionString("ABM Data Systems");
+                var connStr = this.Configuration.GetConnectionString("ABM_Data_Systems");
                 builder.UseMySql(connStr);
             });
 

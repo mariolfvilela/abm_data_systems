@@ -17,16 +17,19 @@ namespace abm_data_systems.CrossCutting.IoC
             //Aplicação
             svcCollection.AddTransient(typeof(IAppServicoBase<,>), typeof(AppServiceBase<,>));
             svcCollection.AddTransient<IUserAppService, UserAppService>();
+            svcCollection.AddTransient<ICodeChallengeAppService, CodeChallengeAppService>();
 
 
             //Domínio
             svcCollection.AddTransient(typeof(IServiceBase<>), typeof(ServiceBase<>));
             svcCollection.AddTransient<IUserService, UserService>();
+            svcCollection.AddTransient<ICodeChallengeService, CodeChallengeService>();
 
             //Repositorio
             svcCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             svcCollection.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             svcCollection.AddScoped<IUserRepository, UserRepository>();
+            svcCollection.AddScoped<ICodeChallengeRepository, CodeChallengeRepository>();
         }
     }
 }

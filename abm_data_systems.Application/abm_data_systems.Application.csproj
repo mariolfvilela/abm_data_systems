@@ -11,6 +11,7 @@
     <Folder Include="Services\" />
     <Folder Include="Interfaces\" />
     <Folder Include="AutoMapper\" />
+    <Folder Include="ViewModels\CodeChallenge\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\abm_data_systems.Domain\abm_data_systems.Domain.csproj" />
