@@ -23,13 +23,13 @@ namespace abm_data_systems.CrossCutting.IoC
             //Domínio
             svcCollection.AddTransient(typeof(IServiceBase<>), typeof(ServiceBase<>));
             svcCollection.AddTransient<IUserService, UserService>();
-            svcCollection.AddTransient<IQuestion3Service, Question3Service>();
+            svcCollection.AddTransient<ICodeChallengeService, CodeChallengeService>();
 
             //Repositorio
             svcCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             svcCollection.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             svcCollection.AddScoped<IUserRepository, UserRepository>();
-            svcCollection.AddScoped<IQuestion3Repository, Question3Repository>();
+            svcCollection.AddScoped<ICodeChallengeRepository, CodeChallengeRepository>();
         }
     }
 }

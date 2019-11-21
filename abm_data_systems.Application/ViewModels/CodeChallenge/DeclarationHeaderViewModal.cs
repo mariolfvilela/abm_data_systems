@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace abm_data_systems.Application.ViewModels.Question3
+namespace abm_data_systems.Application.ViewModels.CodeChallenge
 {
     [XmlRoot(ElementName = "DeclarationHeader")]
     public class DeclarationHeaderViewModal : ViewModelBase

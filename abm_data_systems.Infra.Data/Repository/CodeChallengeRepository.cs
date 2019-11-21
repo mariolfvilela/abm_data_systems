@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Threading.Tasks;
-using abm_data_systems.Domain.Entities.Question3;
+using abm_data_systems.Domain.Entities.CodeChallenge;
 using abm_data_systems.Domain.Interfaces.Repositories;
 using abm_data_systems.Infra.Data.Context;
 
 namespace abm_data_systems.Infra.Data.Repository
 {
-    public class Question3Repository : RepositoryBase<DeclarationHeader>, IQuestion3Repository
+    public class CodeChallengeRepository : RepositoryBase<InputDocument>, ICodeChallengeRepository
     {
-        public Question3Repository(Context_ABM_Data_Systems contexto)
+        public CodeChallengeRepository(Context_ABM_Data_Systems contexto)
             : base(contexto)
         {
         }
 
-        public Task<DeclarationHeader> GetStatus()
+        public Task<InputDocument> GetStatus()
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> GetStatus(DeclarationHeader declarationHeader)
+        public Task<int> Question3(InputDocument inputDocument)
         {
             throw new NotImplementedException();
         }

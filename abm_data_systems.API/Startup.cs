@@ -50,7 +50,7 @@ namespace abm_data_systems.API
                 if (_env.IsDevelopment())
                     builder.EnableSensitiveDataLogging(true);
 
-                var connStr = this.Configuration.GetConnectionString("ABM Data Systems");
+                var connStr = this.Configuration.GetConnectionString("ABM_Data_Systems");
                 builder.UseMySql(connStr);
             });
 

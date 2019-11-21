@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using abm_data_systems.Application.ViewModels.Question3;
-using abm_data_systems.Domain.Entities.Question3;
+using abm_data_systems.Application.ViewModels.CodeChallenge;
+using abm_data_systems.Domain.Entities.CodeChallenge;
 using DotNetCore.Objects;
 
 namespace abm_data_systems.Application.Interfaces
 {
-    public interface IQuestion3AppService : IAppServicoBase<DeclarationHeader, DeclarationHeaderViewModal>
+    public interface IQuestion3AppService : IAppServicoBase<InputDocument, InputDocumentViewModal>
     {
-        Task<IDataResult<int>>GetStatus(DeclarationHeaderViewModal declarationHeaderViewModal);
+        Task<IDataResult<int>>Question3(InputDocumentViewModal inputDocumentViewModal);
     }
 }

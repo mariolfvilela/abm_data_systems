@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace abm_data_systems.Application.ViewModels.Question3
+namespace abm_data_systems.Application.ViewModels.CodeChallenge
 {
     [XmlRoot(ElementName = "Declaration")]
-    public class DeclarationViewModal
+    public class DeclarationViewModal : ViewModelBase
     {
         [XmlElement(ElementName = "DeclarationHeader")]
-        public DeclarationHeaderViewModal DeclarationHeader { get; set; }
+        public InputDocumentViewModal DeclarationHeader { get; set; }
         [XmlAttribute(AttributeName = "Command")]
         public string Command { get; set; }
         [XmlAttribute(AttributeName = "Version")]

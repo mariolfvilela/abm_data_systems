@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using abm_data_systems.Application.Interfaces;
-using abm_data_systems.Application.ViewModels.Question3;
+using abm_data_systems.Application.ViewModels.CodeChallenge;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,7 +35,7 @@ namespace abm_data_systems.API.Controllers
 
         // [Authorize("Bearer")]
         [AllowAnonymous]
-        [HttpGet]
+        [HttpPut]
         [Route("Question2")]
         public async Task<IActionResult> Question2()
         {
@@ -52,17 +52,17 @@ namespace abm_data_systems.API.Controllers
 
         // [Authorize("Bearer")]
         [AllowAnonymous]
-        [HttpGet]
+        [HttpPut]
         [Route("Question3")]
         public async Task<IActionResult> Question3(
             [FromServices]IQuestion3AppService _repository,
-            [FromBody] DeclarationHeaderViewModal dado
+            [FromBody] InputDocumentViewModal dado
         )
         {
 
             try
             {
-                return new OkObjectResult(await _repository.GetStatus(dado));
+                return new OkObjectResult(await _repository.Question3(dado));
             }
             catch (Exception ex)
             {

@@ -1,7 +1,7 @@
 ﻿using System;
 using abm_data_systems.Domain.Entities.Common;
 
-namespace abm_data_systems.Domain.Entities.Question3
+namespace abm_data_systems.Domain.Entities.CodeChallenge
 {
     public class DeclarationHeader : EntityBase
     {
