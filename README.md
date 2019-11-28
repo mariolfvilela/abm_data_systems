@@ -94,6 +94,8 @@ The webservice should respond with a status code which is based on parsing the c
 - If the Declararation’s Command <> ‘DEFAULT’ then return ‘-1’ – which means invalid command specified.
 - If the SiteID <> ‘DUB’ then return ‘-2’ – invalid Site specified.
 
+*****
+### Solution implemented :thumbsup:
 **Software modeling approach was developed the challenge "DDD Architecture", Domain Driven Design (DDD).** Reference [Eric Ferreira](https://medium.com/@ericandrade_24404/parte-01-criando-arquitetura-em-camadas-com-ddd-injeção-de-dep-ef-60b851c88461).
 >DDD is a software modeling approach that follows a set of practices to facilitate the implementation of complex business rules / processes that we treat as a domain. - Eduardo Pires
 

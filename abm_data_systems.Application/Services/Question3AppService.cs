@@ -21,9 +21,16 @@ namespace abm_data_systems.Application.Services
             _service = service;
         }
 
-        public Task<IDataResult<dynamic>> Question1(InputDocumentViewModal inputDocument)
+        public Task<IDataResult<EdifactViewModal>> Question1(EdifactViewModal edifactViewModal)
         {
-            throw new NotImplementedException();
+            var lines = edifactViewModal.Message.Split('\'');     // splits at the apostrophe character
+
+            foreach (string line in lines)
+            {
+                var pieces = line.Split('+', ':');    // splits at both of those characters
+                //DoSomething(pieces);
+            }
+            return (Task<IDataResult<EdifactViewModal>>)DataResult<EdifactViewModal>.Success(edifactViewModal);
         }
 
         public Task<IDataResult<List<dynamic>>> Question2(InputDocumentViewModal inputDocument)

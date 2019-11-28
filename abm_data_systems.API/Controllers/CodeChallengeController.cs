@@ -11,23 +11,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace abm_data_systems.API.Controllers
 {
-    [Produces("application/xml")]
+    //[Produces("application/xml")]
     [ApiController]
     [Route("[controller]")]
     public class CodeChallengeController : Controller
     {
         // [Authorize("Bearer")]
         [AllowAnonymous]
-        [HttpPut]
+        [HttpPost]
         [Route("Question1")]
         public async Task<IActionResult> Question1(
             [FromServices]ICodeChallengeAppService _repository,
-            [FromBody] dynamic dado
+            [FromBody] EdifactViewModal edifactViewModal
         )
         {
             try
             {
-                return new OkObjectResult(_repository.Question1(dado));
+                return new OkObjectResult(await _repository.Question1(edifactViewModal));
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace abm_data_systems.API.Controllers
         [AllowAnonymous]
         [Consumes("application/xml")]
         [Produces("application/xml")]
-        [HttpPut]
+        [HttpPost]
         [Route("Question2")]
         public async Task<IActionResult> Question2(
             [FromServices]ICodeChallengeAppService _repository,
@@ -60,7 +60,7 @@ namespace abm_data_systems.API.Controllers
         [AllowAnonymous]
         [Consumes("application/xml")]
         [Produces("application/xml")]
-        [HttpPut]
+        [HttpPost]
         [Route("Question3")]
         public async Task<IActionResult> Question3(
             [FromServices]ICodeChallengeAppService _repository,
